@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Fluent Python,">
 
 
 
@@ -81,17 +81,18 @@
 
 
 
-<meta name="description" content="2-1 列表推导式和生成器推导式 title: Part2:2-1 列表推导式和生成器推导式date: 2019-03-09 21:10:49tags:   Fluent Pythoncategories:  Fluent Python   使用列表推导式做过滤12345678# 用列表推导式做过滤symbols = &apos;$&amp;amp;@#^*&apos;beyond_ascii = [ord(s) for s">
+<meta name="description" content="使用列表推导式做过滤12345678# 用列表推导式做过滤symbols = &apos;$&amp;amp;@#^*&apos;beyond_ascii = [ord(s) for s in symbols if ord(s) &amp;gt; 50]print(beyond_ascii)# 用map/filter组合做过滤beyond_ascii = list(filter(lambda c: c &amp;gt; 50, map(or">
+<meta name="keywords" content="Fluent Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Brave-man&#39;s Blog">
+<meta property="og:title" content="Part2:2-1 列表推导式和生成器推导式">
 <meta property="og:url" content="http://yoursite.com/2019/03/10/2-1 列表推导式和生成器推导式/index.html">
 <meta property="og:site_name" content="Brave-man&#39;s Blog">
-<meta property="og:description" content="2-1 列表推导式和生成器推导式 title: Part2:2-1 列表推导式和生成器推导式date: 2019-03-09 21:10:49tags:   Fluent Pythoncategories:  Fluent Python   使用列表推导式做过滤12345678# 用列表推导式做过滤symbols = &apos;$&amp;amp;@#^*&apos;beyond_ascii = [ord(s) for s">
+<meta property="og:description" content="使用列表推导式做过滤12345678# 用列表推导式做过滤symbols = &apos;$&amp;amp;@#^*&apos;beyond_ascii = [ord(s) for s in symbols if ord(s) &amp;gt; 50]print(beyond_ascii)# 用map/filter组合做过滤beyond_ascii = list(filter(lambda c: c &amp;gt; 50, map(or">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-10T03:27:10.398Z">
+<meta property="og:updated_time" content="2019-03-10T03:38:26.691Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Brave-man&#39;s Blog">
-<meta name="twitter:description" content="2-1 列表推导式和生成器推导式 title: Part2:2-1 列表推导式和生成器推导式date: 2019-03-09 21:10:49tags:   Fluent Pythoncategories:  Fluent Python   使用列表推导式做过滤12345678# 用列表推导式做过滤symbols = &apos;$&amp;amp;@#^*&apos;beyond_ascii = [ord(s) for s">
+<meta name="twitter:title" content="Part2:2-1 列表推导式和生成器推导式">
+<meta name="twitter:description" content="使用列表推导式做过滤12345678# 用列表推导式做过滤symbols = &apos;$&amp;amp;@#^*&apos;beyond_ascii = [ord(s) for s in symbols if ord(s) &amp;gt; 50]print(beyond_ascii)# 用map/filter组合做过滤beyond_ascii = list(filter(lambda c: c &amp;gt; 50, map(or">
 
 
 
@@ -127,7 +128,7 @@
 
 
 
-  <title> | Brave-man's Blog</title>
+  <title>Part2:2-1 列表推导式和生成器推导式 | Brave-man's Blog</title>
   
 
 
@@ -291,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">Part2:2-1 列表推导式和生成器推导式</h1>
         
 
         <div class="post-meta">
@@ -303,7 +304,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-10T11:18:52+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-10T11:36:49+08:00">
                 2019-03-10
               </time>
             
@@ -313,6 +314,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Fluent-Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Fluent Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -351,14 +374,8 @@
       
 
       
-        <h1 id="2-1-列表推导式和生成器推导式"><a href="#2-1-列表推导式和生成器推导式" class="headerlink" title="2-1 列表推导式和生成器推导式"></a>2-1 列表推导式和生成器推导式</h1><hr>
-<p>title: Part2:2-1 列表推导式和生成器推导式<br>date: 2019-03-09 21:10:49<br>tags: </p>
-<ul>
-<li>Fluent Python<br>categories: </li>
-<li>Fluent Python</li>
-</ul>
-<hr>
-<h4 id="使用列表推导式做过滤"><a href="#使用列表推导式做过滤" class="headerlink" title="使用列表推导式做过滤"></a>使用列表推导式做过滤</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 用列表推导式做过滤</span></span><br><span class="line">symbols = <span class="string">'$&amp;@#^*'</span></span><br><span class="line">beyond_ascii = [ord(s) <span class="keyword">for</span> s <span class="keyword">in</span> symbols <span class="keyword">if</span> ord(s) &gt; <span class="number">50</span>]</span><br><span class="line">print(beyond_ascii)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用map/filter组合做过滤</span></span><br><span class="line">beyond_ascii = list(filter(<span class="keyword">lambda</span> c: c &gt; <span class="number">50</span>, map(ord, symbols)))</span><br><span class="line">print(beyond_ascii)</span><br></pre></td></tr></table></figure>
+        <h4 id="使用列表推导式做过滤"><a href="#使用列表推导式做过滤" class="headerlink" title="使用列表推导式做过滤"></a>使用列表推导式做过滤</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 用列表推导式做过滤</span></span><br><span class="line">symbols = <span class="string">'$&amp;@#^*'</span></span><br><span class="line">beyond_ascii = [ord(s) <span class="keyword">for</span> s <span class="keyword">in</span> symbols <span class="keyword">if</span> ord(s) &gt; <span class="number">50</span>]</span><br><span class="line">print(beyond_ascii)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用map/filter组合做过滤</span></span><br><span class="line">beyond_ascii = list(filter(<span class="keyword">lambda</span> c: c &gt; <span class="number">50</span>, map(ord, symbols)))</span><br><span class="line">print(beyond_ascii)</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h4 id="使用列表推导式计算笛卡尔积"><a href="#使用列表推导式计算笛卡尔积" class="headerlink" title="使用列表推导式计算笛卡尔积"></a>使用列表推导式计算笛卡尔积</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用列表推导计算笛卡尔积</span></span><br><span class="line"></span><br><span class="line">colors = [<span class="string">'black'</span>, <span class="string">'white'</span>]</span><br><span class="line">sizes = [<span class="string">'S'</span>, <span class="string">'M'</span>, <span class="string">"L"</span>]</span><br><span class="line">tshirts = [(color, size) <span class="keyword">for</span> color <span class="keyword">in</span> colors <span class="keyword">for</span> size <span class="keyword">in</span> sizes]</span><br><span class="line">print(tshirts)</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">result:</span></span><br><span class="line"><span class="string">[('black', 'S'), ('black', 'M'), ('black', 'L'), ('white', 'S'), ('white', 'M'), ('white', 'L')]</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 等价于</span></span><br><span class="line">tshirts = []</span><br><span class="line"><span class="keyword">for</span> color <span class="keyword">in</span> colors:</span><br><span class="line">    <span class="keyword">for</span> size <span class="keyword">in</span> sizes:</span><br><span class="line">        tshirts.append((color, size))</span><br><span class="line">print(tshirts)</span><br></pre></td></tr></table></figure>
 <h4 id="生成器表达式"><a href="#生成器表达式" class="headerlink" title="生成器表达式"></a>生成器表达式</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">生成器表达式背后遵守迭代器协议，可以逐个产出元素，而不是先建立一个完整的列表</span></span><br><span class="line"><span class="string">然后再把这个列表传递到某个构造函数中。相比列表推导式，能够节省内存。</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="comment"># 用生成器表达式初始化元组和数组</span></span><br><span class="line">symbols = <span class="string">'$&amp;@#^*'</span></span><br><span class="line">beyond_ascii = tuple(ord(s) <span class="keyword">for</span> s <span class="keyword">in</span> symbols)</span><br><span class="line">print(beyond_ascii)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> array</span><br><span class="line">print(array.array(<span class="string">'I'</span>, (ord(symbol) <span class="keyword">for</span> symbol <span class="keyword">in</span> symbols)))</span><br></pre></td></tr></table></figure>
 
@@ -375,6 +392,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Fluent-Python/" rel="tag"># Fluent Python</a>
+          
+        </div>
       
 
       
@@ -394,6 +417,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/10/内置序列和列表推导式/" rel="prev" title="Part2:2-2 内置序列和列表推导式">
+                Part2:2-2 内置序列和列表推导式 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -560,7 +587,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2-1-列表推导式和生成器推导式"><span class="nav-number">1.</span> <span class="nav-text">2-1 列表推导式和生成器推导式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用列表推导式做过滤"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">使用列表推导式做过滤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用列表推导式计算笛卡尔积"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">使用列表推导式计算笛卡尔积</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成器表达式"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">生成器表达式</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用列表推导式做过滤"><span class="nav-number">1.</span> <span class="nav-text">使用列表推导式做过滤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用列表推导式计算笛卡尔积"><span class="nav-number">2.</span> <span class="nav-text">使用列表推导式计算笛卡尔积</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成器表达式"><span class="nav-number">3.</span> <span class="nav-text">生成器表达式</span></a></li></ol></div>
             
 
           </div>
@@ -739,7 +766,7 @@
         var disqus_config = function () {
           this.page.url = 'http://yoursite.com/2019/03/10/2-1 列表推导式和生成器推导式/';
           this.page.identifier = '2019/03/10/2-1 列表推导式和生成器推导式/';
-          this.page.title = '';
+          this.page.title = 'Part2:2-1 列表推导式和生成器推导式';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://comments.disqus.com/embed.js';
