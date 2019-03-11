@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Fluent Python,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Brave-man's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="文中源码来源于《流畅的python》, 仅用来学习，特此说明。  用生成器表达式计算笛卡尔积用生成器表达式内存中不会留下一个有6个组合的列表，因为生成器会在每次for循环运行时，才会生成一           个组合。1234567891011121314colors = [&apos;black&apos;, &apos;white&apos;]sizes = [&apos;S&apos;, &apos;M&apos;, &apos;L&apos;]for shirt in (&apos;%s %s&apos;">
+<meta name="keywords" content="Fluent Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Part2:2-3 元组">
+<meta property="og:url" content="http://yoursite.com/2019/03/11/2-3元组/index.html">
+<meta property="og:site_name" content="Brave-man&#39;s Blog">
+<meta property="og:description" content="文中源码来源于《流畅的python》, 仅用来学习，特此说明。  用生成器表达式计算笛卡尔积用生成器表达式内存中不会留下一个有6个组合的列表，因为生成器会在每次for循环运行时，才会生成一           个组合。1234567891011121314colors = [&apos;black&apos;, &apos;white&apos;]sizes = [&apos;S&apos;, &apos;M&apos;, &apos;L&apos;]for shirt in (&apos;%s %s&apos;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/03/11/2-3元组/15523175063506.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/11/2-3元组/15523176439805.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/11/2-3元组/15523176812165.jpg">
+<meta property="og:updated_time" content="2019-03-11T15:41:34.752Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Part2:2-3 元组">
+<meta name="twitter:description" content="文中源码来源于《流畅的python》, 仅用来学习，特此说明。  用生成器表达式计算笛卡尔积用生成器表达式内存中不会留下一个有6个组合的列表，因为生成器会在每次for循环运行时，才会生成一           个组合。1234567891011121314colors = [&apos;black&apos;, &apos;white&apos;]sizes = [&apos;S&apos;, &apos;M&apos;, &apos;L&apos;]for shirt in (&apos;%s %s&apos;">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/11/2-3元组/15523175063506.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/11/2-3元组/">
+
+
+
+
+
+  <title>Part2:2-3 元组 | Brave-man's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Brave-man's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/11/2-3元组/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="David">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/zzw.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Brave-man's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Part2:2-3 元组</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-11T23:24:01+08:00">
+                2019-03-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Fluent-Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Fluent Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>文中源码来源于《流畅的python》, 仅用来学习，特此说明。</p>
+</blockquote>
+<h4 id="用生成器表达式计算笛卡尔积"><a href="#用生成器表达式计算笛卡尔积" class="headerlink" title="用生成器表达式计算笛卡尔积"></a>用生成器表达式计算笛卡尔积</h4><p>用生成器表达式内存中不会留下一个有6个组合的列表，因为生成器会在每次<code>for</code>循环运行时，才会生成一           个组合。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">colors = [<span class="string">'black'</span>, <span class="string">'white'</span>]</span><br><span class="line">sizes = [<span class="string">'S'</span>, <span class="string">'M'</span>, <span class="string">'L'</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> shirt <span class="keyword">in</span> (<span class="string">'%s %s'</span> % (c, s) <span class="keyword">for</span> c <span class="keyword">in</span> colors <span class="keyword">for</span> s <span class="keyword">in</span> sizes):</span><br><span class="line">    print(shirt)</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">result:</span></span><br><span class="line"><span class="string">black S</span></span><br><span class="line"><span class="string">black M</span></span><br><span class="line"><span class="string">black L</span></span><br><span class="line"><span class="string">white S</span></span><br><span class="line"><span class="string">white M</span></span><br><span class="line"><span class="string">white L</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="元组和记录"><a href="#元组和记录" class="headerlink" title="元组和记录"></a>元组和记录</h4><p>元组其实是对数据的记录：<br>元组中的每个元素都存放了记录中一个字段的数据，外加这个字段的位置。<br>如果把元组理解为不可变的列表，那么它所含有的元素的总数和位置信息就变得可有可无。<br>如果把元组当作字段的集合，那么位置和数量就变得非常重要。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">lax_coordinates = (<span class="number">33.9425</span>, <span class="number">-118.408056</span>)  <span class="comment"># 洛杉矶国际机场的经纬度</span></span><br><span class="line">city, year, pop, chg, area = (<span class="string">'Tokyo'</span>, <span class="number">2003</span>, <span class="number">32450</span>, <span class="number">0.66</span>, <span class="number">8014</span>) <span class="comment"># 东京的市民/年份/人口（百万）/人口变化/面积</span></span><br><span class="line">traveler_ids = [(<span class="string">'USA'</span>, <span class="string">'31195855'</span>), (<span class="string">'BRA'</span>, <span class="string">'CE342567'</span>), (<span class="string">'ESP'</span>, <span class="string">'XDA205856'</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> passport <span class="keyword">in</span> sorted(traveler_ids):</span><br><span class="line">    print(<span class="string">'%s/%s'</span> % passport)</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">country_code/passport_number</span></span><br><span class="line"><span class="string">BRA/CE342567</span></span><br><span class="line"><span class="string">ESP/XDA205856</span></span><br><span class="line"><span class="string">USA/31195855</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> country, _ <span class="keyword">in</span> traveler_ids:</span><br><span class="line">    print(country)</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">拆包：元组第二个元素对于我们没有用，用'_'作为占位符</span></span><br><span class="line"><span class="string">USA</span></span><br><span class="line"><span class="string">BRA</span></span><br><span class="line"><span class="string">ESP</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="元组拆包"><a href="#元组拆包" class="headerlink" title="元组拆包"></a>元组拆包</h4><p>元组拆包可以运用到任何可迭代对象上，唯一的硬性要求就是被可迭代对象中的元素的数量必须要和接受这些元素的元组的空档数一致。</p>
+<h5 id="平行赋值"><a href="#平行赋值" class="headerlink" title="平行赋值"></a>平行赋值</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 平行赋值</span></span><br><span class="line">lax_coordinates = (<span class="number">33.9425</span>, <span class="number">-118.408056</span>)</span><br><span class="line">latitude, longitude = lax_coordinates</span><br><span class="line">print(latitude)  <span class="comment"># 33.9425</span></span><br><span class="line">print(longitude)  <span class="comment"># -118.408056</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 不使用中间变量交换两个变量的值</span></span><br><span class="line">b, a = a, b</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 用*运算符把一个可迭代对象拆开作为函数的参数</span></span><br><span class="line">print(divmod(<span class="number">20</span>, <span class="number">8</span>))  <span class="comment"># (2, 4)</span></span><br><span class="line">t = (<span class="number">20</span>, <span class="number">8</span>)</span><br><span class="line">print(divmod(*t))  <span class="comment"># (2, 4)</span></span><br><span class="line">quotient, remainder = divmod(*t)</span><br><span class="line">print(quotient, remainder) <span class="comment"># 2 4</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># os.path.split()函数返回路径和最后一个文件名组成的元组(path, last_part)</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">_, filename = os.path.split(<span class="string">'/home/local/test.py'</span>)</span><br><span class="line">print(filename)  <span class="comment"># test.py</span></span><br><span class="line">print(_)  <span class="comment"># /home/local</span></span><br></pre></td></tr></table></figure>
+<h5 id="用-来处理剩下的元素"><a href="#用-来处理剩下的元素" class="headerlink" title="用*来处理剩下的元素"></a>用*来处理剩下的元素</h5><p>经典写法<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a, b, *rest = range(<span class="number">5</span>)</span><br><span class="line">print(a, b, rest)  <span class="comment"># 0 1 [2, 3, 4]</span></span><br><span class="line"></span><br><span class="line">a, b, *rest = range(<span class="number">3</span>)</span><br><span class="line">print(a, b, rest)  <span class="comment"># 0 1 [2]</span></span><br><span class="line"></span><br><span class="line">a, b, *rest = range(<span class="number">2</span>)</span><br><span class="line">print(a, b, rest)  <span class="comment"># 0, 1, []</span></span><br></pre></td></tr></table></figure></p>
+<p>在平行赋值中，*只能作用于一个变量名的前面，但是这个变量可以出现在赋值表达式的任何位置。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a, *body, c, d = range(<span class="number">5</span>)</span><br><span class="line">print(a, body, c, d)  <span class="comment"># 0 [1, 2] 3 4</span></span><br><span class="line"></span><br><span class="line">*head, b, c, d = range(<span class="number">5</span>)</span><br><span class="line">print(head, b, c, d)  <span class="comment"># [0, 1] 2 3 4</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="嵌套元组拆包"><a href="#嵌套元组拆包" class="headerlink" title="嵌套元组拆包"></a>嵌套元组拆包</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">metro_areas = [</span><br><span class="line">    (<span class="string">'Tokyo'</span>, <span class="string">'JP'</span>, <span class="number">36.933</span>, (<span class="number">35.6876</span>, <span class="number">139.2343</span>)),</span><br><span class="line">    (<span class="string">'Delhi Ncy'</span>, <span class="string">'IN'</span>, <span class="number">21.936</span>, (<span class="number">28.1324</span>, <span class="number">77.2324</span>)),</span><br><span class="line">    (<span class="string">'New York-Newark'</span>, <span class="string">'US'</span>, <span class="number">20.104</span>, (<span class="number">40.808611</span>, <span class="number">-74.022433</span>)),</span><br><span class="line">    (<span class="string">'Sao Paulo'</span>, <span class="string">'BR'</span>, <span class="number">19.649</span>, (<span class="number">-23.54778</span>, <span class="number">-46.3424</span>))</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">print(<span class="string">'&#123;:15&#125; | &#123;:^9&#125; | &#123;:^9&#125;'</span>.format(<span class="string">''</span>, <span class="string">'lat.'</span>, <span class="string">'long.'</span>))</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">                |   lat.    |   long.</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">fmt = <span class="string">'&#123;:15&#125; | &#123;:9.4f&#125; | &#123;:9.4f&#125;'</span></span><br><span class="line"><span class="keyword">for</span> name, cc, pop, (latitude, longitude) <span class="keyword">in</span> metro_areas:</span><br><span class="line">    <span class="keyword">if</span> longitude &lt;= <span class="number">0</span>:</span><br><span class="line">        print(fmt.format(name, latitude, longitude))</span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">New York-Newark |   40.8086 |  -74.0224</span></span><br><span class="line"><span class="string">Sao Paulo       |  -23.5478 |  -46.3424</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure>
+<h4 id="具名元组"><a href="#具名元组" class="headerlink" title="具名元组"></a>具名元组</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义和使用具名元组</span></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> namedtuple</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">City = namedtuple(<span class="string">'City'</span>, <span class="string">'name country population coordinates'</span>)</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">namedtuple需要两个参数，一个是类名，另一个是类各个字段的名字。</span></span><br><span class="line"><span class="string">后者可以是有数个字符串组成的可迭代对象，</span></span><br><span class="line"><span class="string">或者是由空格分隔开的字段名组成的字符串。</span></span><br><span class="line"><span class="string">City = namedtuple('City', ['name', 'country', 'population', 'coordinates'])</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">tokyo = City(<span class="string">'Tokyo'</span>, <span class="string">'JP'</span>, <span class="number">36.933</span>, (<span class="number">35.687433</span>, <span class="number">139.691737</span>))</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">存放在对应字段中的数据要以一串参数的形式传入到构造函数中</span></span><br><span class="line"><span class="string">元组的传入只接受单一的可迭代对象</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">print(tokyo)</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">tokyo = City(name='Tokyo', country='JP', population=36.933, coordinates=(35.687433, 139.691737))</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">print(tokyo.population)  <span class="comment"># 36.933</span></span><br><span class="line">print(tokyo.coordinates)  <span class="comment"># (35.687433, 139.691737)</span></span><br><span class="line">print(tokyo[<span class="number">1</span>])  <span class="comment"># JP</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 具名元组的属性和方法</span></span><br><span class="line">print(City._fields)  <span class="comment"># ('name', 'country', 'population', 'coordinates')</span></span><br><span class="line">LatLong = namedtuple(<span class="string">'LatLong'</span>, [<span class="string">'lat'</span>, <span class="string">'long'</span>])</span><br><span class="line">delhi_data = (<span class="string">'Delhi NCR'</span>, <span class="string">'IN'</span>, <span class="number">21.935</span>, LatLong(<span class="number">28.623722</span>, <span class="number">77.234242</span>))</span><br><span class="line">delhi = City._make(delhi_data)</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">_make通过接受一个可迭代对象来生成这个类的一个实例，它的作用和City(*delhi_data)是一样的。</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">print(delhi._asdict())</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">_asdict()把具名元组以collections.OrderedDict的形式返回，可以友好的呈现信息。</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">OrderedDict([('name', 'Delhi NCR'), </span></span><br><span class="line"><span class="string">('country', 'IN'), </span></span><br><span class="line"><span class="string">('population', 21.935),</span></span><br><span class="line"><span class="string">('coordinates', </span></span><br><span class="line"><span class="string">LatLong(lat=28.623722, long=77.234242))])</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> delhi._asdict().items():</span><br><span class="line">    print(key + <span class="string">':'</span>, value)</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">name: Delhi NCR</span></span><br><span class="line"><span class="string">country: IN</span></span><br><span class="line"><span class="string">population: 21.935</span></span><br><span class="line"><span class="string">coordinates: LatLong(lat=28.623722, long=77.234242)</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure>
+<h4 id="作为不可变列表的元组"><a href="#作为不可变列表的元组" class="headerlink" title="作为不可变列表的元组"></a>作为不可变列表的元组</h4><img src="/2019/03/11/2-3元组/15523175063506.jpg">
+<img src="/2019/03/11/2-3元组/15523176439805.jpg">
+<img src="/2019/03/11/2-3元组/15523176812165.jpg">
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Fluent-Python/" rel="tag"># Fluent Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/10/内置序列和列表推导式/" rel="next" title="Part2:2-2 内置序列和列表推导式">
+                <i class="fa fa-chevron-left"></i> Part2:2-2 内置序列和列表推导式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/zzw.jpg" alt="David">
+            
+              <p class="site-author-name" itemprop="name">David</p>
+              <p class="site-description motion-element" itemprop="description">使我痛苦者，必使我强大！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Brave-man" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:y2356279292r@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#用生成器表达式计算笛卡尔积"><span class="nav-number">1.</span> <span class="nav-text">用生成器表达式计算笛卡尔积</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#元组和记录"><span class="nav-number">2.</span> <span class="nav-text">元组和记录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#元组拆包"><span class="nav-number">3.</span> <span class="nav-text">元组拆包</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#平行赋值"><span class="nav-number">3.1.</span> <span class="nav-text">平行赋值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用-来处理剩下的元素"><span class="nav-number">3.2.</span> <span class="nav-text">用*来处理剩下的元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#嵌套元组拆包"><span class="nav-number">3.3.</span> <span class="nav-text">嵌套元组拆包</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#具名元组"><span class="nav-number">4.</span> <span class="nav-text">具名元组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作为不可变列表的元组"><span class="nav-number">5.</span> <span class="nav-text">作为不可变列表的元组</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">David</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
