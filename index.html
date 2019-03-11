@@ -366,12 +366,10 @@
 
       
         
-          
-          
-文中源码来源于《流畅的python》, 仅用来学习，特此说明。
-
-用生成器表达式计算笛卡尔积用生成器表达式内存中不会留下一个有6个组合的列表，因为生成器会在每次for循环运行时，才会生成一           个组合。1234567891011121314colors = ['black', 'w
-          ...
+          <blockquote>
+<p>文中源码来源于《流畅的python》, 仅用来学习，特此说明。</p>
+</blockquote>
+<h4 id="用生成器表达式计算笛卡尔积"><a href="#用生成器表达式计算笛卡尔积" class="headerlink" title="用生成器表达式计算笛卡尔积"></a>用生成器表达式计算笛卡尔积</h4><p>用生成器表达式内存中不会留下一个有6个组合的列表，因为生成器会在每次<code>for</code>循环运行时，才会生成一           个组合。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">colors = [<span class="string">'black'</span>, <span class="string">'white'</span>]</span><br><span class="line">sizes = [<span class="string">'S'</span>, <span class="string">'M'</span>, <span class="string">'L'</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> shirt <span class="keyword">in</span> (<span class="string">'%s %s'</span> % (c, s) <span class="keyword">for</span> c <span class="keyword">in</span> colors <span class="keyword">for</span> s <span class="keyword">in</span> sizes):</span><br><span class="line">    print(shirt)</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">result:</span></span><br><span class="line"><span class="string">black S</span></span><br><span class="line"><span class="string">black M</span></span><br><span class="line"><span class="string">black L</span></span><br><span class="line"><span class="string">white S</span></span><br><span class="line"><span class="string">white M</span></span><br><span class="line"><span class="string">white L</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/03/11/2-3元组/#more" rel="contents">
