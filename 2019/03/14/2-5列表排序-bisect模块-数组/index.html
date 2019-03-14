@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Fluent Python,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Brave-man's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="list.sort方法和内置函数sortedlist.sort方法会就地排序，不会把原列表复制一份，返回值为None。sorted则相反，会新建一个列表作为返回值，接受任何形式的的可迭代对象作为参数，甚至包括不可变序列和生成器。二者都有两个可选的关键字参数：  reverse,为True,倒序。默认值为False。 key,一个只有一个参数的函数，这个函数会被用到序列里的每一个元素上，所产生的结果">
+<meta name="keywords" content="Fluent Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2-5列表排序&#x2F;bisect模块&#x2F;数组">
+<meta property="og:url" content="http://yoursite.com/2019/03/14/2-5列表排序-bisect模块-数组/index.html">
+<meta property="og:site_name" content="Brave-man&#39;s Blog">
+<meta property="og:description" content="list.sort方法和内置函数sortedlist.sort方法会就地排序，不会把原列表复制一份，返回值为None。sorted则相反，会新建一个列表作为返回值，接受任何形式的的可迭代对象作为参数，甚至包括不可变序列和生成器。二者都有两个可选的关键字参数：  reverse,为True,倒序。默认值为False。 key,一个只有一个参数的函数，这个函数会被用到序列里的每一个元素上，所产生的结果">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/03/14/2-5列表排序-bisect模块-数组/15525711218040.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/14/2-5列表排序-bisect模块-数组/15525711389913.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/14/2-5列表排序-bisect模块-数组/15525711630577.jpg">
+<meta property="og:updated_time" content="2019-03-14T13:53:34.481Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2-5列表排序&#x2F;bisect模块&#x2F;数组">
+<meta name="twitter:description" content="list.sort方法和内置函数sortedlist.sort方法会就地排序，不会把原列表复制一份，返回值为None。sorted则相反，会新建一个列表作为返回值，接受任何形式的的可迭代对象作为参数，甚至包括不可变序列和生成器。二者都有两个可选的关键字参数：  reverse,为True,倒序。默认值为False。 key,一个只有一个参数的函数，这个函数会被用到序列里的每一个元素上，所产生的结果">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/14/2-5列表排序-bisect模块-数组/15525711218040.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/14/2-5列表排序-bisect模块-数组/">
+
+
+
+
+
+  <title>2-5列表排序/bisect模块/数组 | Brave-man's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Brave-man's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/14/2-5列表排序-bisect模块-数组/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="David">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/zzw.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Brave-man's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">2-5列表排序/bisect模块/数组</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-14T21:49:38+08:00">
+                2019-03-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Fluent-Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Fluent Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="list-sort方法和内置函数sorted"><a href="#list-sort方法和内置函数sorted" class="headerlink" title="list.sort方法和内置函数sorted"></a>list.sort方法和内置函数sorted</h3><p><code>list.sort</code>方法会就地排序，不会把原列表复制一份，返回值为<code>None</code>。<br><code>sorted</code>则相反，会新建一个列表作为返回值，接受任何形式的的可迭代对象作为参数，甚至包括不可变序列和生成器。<br>二者都有两个可选的关键字参数：</p>
+<ul>
+<li><code>reverse</code>,为<code>True</code>,倒序。默认值为<code>False</code>。</li>
+<li><code>key</code>,一个只有一个参数的函数，这个函数会被用到序列里的每一个元素上，所产生的结果将是排序算法依赖的对比关键字。如：<code>key=str.lower</code>来实现忽略大小写的排序，<code>key=len</code>进行基于字符串长度的排序。默认值是恒等函数，也就是默认用元素自己的值来排序。</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>fruits = [<span class="string">'grape'</span>, <span class="string">'raspberry'</span>, <span class="string">'apple'</span>, <span class="string">'banana'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(fruits)</span><br><span class="line">[<span class="string">'apple'</span>, <span class="string">'banana'</span>, <span class="string">'grape'</span>, <span class="string">'raspberry'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fruits</span><br><span class="line">[<span class="string">'grape'</span>, <span class="string">'raspberry'</span>, <span class="string">'apple'</span>, <span class="string">'banana'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(fruits, reverse=<span class="literal">True</span>)</span><br><span class="line">[<span class="string">'raspberry'</span>, <span class="string">'grape'</span>, <span class="string">'banana'</span>, <span class="string">'apple'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(fruits, key=len)</span><br><span class="line">[<span class="string">'grape'</span>, <span class="string">'apple'</span>, <span class="string">'banana'</span>, <span class="string">'raspberry'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(fruits, key=len, reverse=<span class="literal">True</span>)</span><br><span class="line">[<span class="string">'raspberry'</span>, <span class="string">'banana'</span>, <span class="string">'grape'</span>, <span class="string">'apple'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fruits</span><br><span class="line">[<span class="string">'grape'</span>, <span class="string">'raspberry'</span>, <span class="string">'apple'</span>, <span class="string">'banana'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fruits.sort()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fruits</span><br><span class="line">[<span class="string">'apple'</span>, <span class="string">'banana'</span>, <span class="string">'grape'</span>, <span class="string">'raspberry'</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="用bisect来管理已经排序的序列"><a href="#用bisect来管理已经排序的序列" class="headerlink" title="用bisect来管理已经排序的序列"></a>用<code>bisect</code>来管理已经排序的序列</h3><p><code>bisect</code>模块包含两个主要函数，<code>bisect</code>和<code>insort</code>，两个函数都利用二分查找算法来在有序序列中查找或插入元素。</p>
+<h4 id="用bisect来搜索"><a href="#用bisect来搜索" class="headerlink" title="用bisect来搜索"></a>用<code>bisect</code>来搜索</h4><p>bisect(haystack, needle) 在 haystack（干草垛）里搜索 needle（针）的位置，该位置满足的条件是，把 needle 插入这个位 置之后，haystack 还能保持升序。也就是在说这个函数返回的位置前 面的值，都小于或等于 needle 的值。其中 haystack 必须是一个有 序的序列。你可以先用 bisect(haystack, needle) 查找位置 index，再用 haystack.insert(index, needle) 来插入新值。 但你也可用 insort 来一步到位，并且后者的速度更快一些。</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bisect</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">HAYSTACK = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">12</span>, <span class="number">15</span>, <span class="number">20</span>, <span class="number">21</span>, <span class="number">23</span>, <span class="number">23</span>, <span class="number">26</span>, <span class="number">29</span>, <span class="number">30</span>]</span><br><span class="line">NEEDLES = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">10</span>, <span class="number">22</span>, <span class="number">23</span>, <span class="number">29</span>, <span class="number">30</span>, <span class="number">31</span>]</span><br><span class="line">ROW_FMT = <span class="string">'&#123;0:2d&#125; @ &#123;1:2d&#125; &#123;2&#125;&#123;0:&lt;2d&#125;'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">demo</span><span class="params">(bisect_fn)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> needle <span class="keyword">in</span> reversed(NEEDLES):</span><br><span class="line">        position = bisect_fn(HAYSTACK, needle)  <span class="comment"># 用特定的bisect函数来计算元素应该出现的位置</span></span><br><span class="line">        offset = position * <span class="string">'  |'</span>  <span class="comment"># 利用该位置来算出需要几个分割符号</span></span><br><span class="line">        print(ROW_FMT.format(needle, position, offset))  <span class="comment"># 把元素和其对应的位置打印出来</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> sys.argv[<span class="number">-1</span>] == <span class="string">'left'</span>:  <span class="comment"># 根据命令上最后一个参数来选用bisect函数</span></span><br><span class="line">        bisect_fn = bisect.bisect_left</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        bisect_fn = bisect.bisect</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'DEMO:'</span>, bisect_fn.__name__)  <span class="comment"># 把选定的函数在抬头上打印出来</span></span><br><span class="line">    print(<span class="string">'haystack -&gt;'</span>, <span class="string">' '</span>.join(<span class="string">'%2d'</span> % n <span class="keyword">for</span> n <span class="keyword">in</span> HAYSTACK))</span><br><span class="line">    demo(bisect_fn)</span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">DEMO: bisect</span></span><br><span class="line"><span class="string">haystack -&gt;  1  4  5  6  8 12 15 20 21 23 23 26 29 30</span></span><br><span class="line"><span class="string">31 @ 14   |  |  |  |  |  |  |  |  |  |  |  |  |  |31</span></span><br><span class="line"><span class="string">30 @ 14   |  |  |  |  |  |  |  |  |  |  |  |  |  |30</span></span><br><span class="line"><span class="string">29 @ 13   |  |  |  |  |  |  |  |  |  |  |  |  |29</span></span><br><span class="line"><span class="string">23 @ 11   |  |  |  |  |  |  |  |  |  |  |23</span></span><br><span class="line"><span class="string">22 @  9   |  |  |  |  |  |  |  |  |22</span></span><br><span class="line"><span class="string">10 @  5   |  |  |  |  |10</span></span><br><span class="line"><span class="string"> 8 @  5   |  |  |  |  |8 </span></span><br><span class="line"><span class="string"> 5 @  3   |  |  |5 </span></span><br><span class="line"><span class="string"> 2 @  1   |2 </span></span><br><span class="line"><span class="string"> 1 @  1   |1 </span></span><br><span class="line"><span class="string"> 0 @  0 0 </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure>
+<p>根据一个分数找到它对应的成绩<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bisect</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">grade</span><span class="params">(score, breakpoints=[<span class="number">60</span>, <span class="number">70</span>, <span class="number">80</span>, <span class="number">90</span>], grades=<span class="string">'FDCBA'</span>)</span>:</span></span><br><span class="line">    i = bisect.bisect(breakpoints, score)  <span class="comment"># 将score插入到列表中，使得它前面的数都比它小，返回它的索引</span></span><br><span class="line">    <span class="keyword">return</span> grades[i]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">grade_li = [grade(score) <span class="keyword">for</span> score <span class="keyword">in</span> [<span class="number">33</span>, <span class="number">99</span>, <span class="number">77</span>, <span class="number">70</span>, <span class="number">89</span>, <span class="number">90</span>, <span class="number">100</span>]]</span><br><span class="line">print(grade_li)  <span class="comment"># ['F', 'A', 'C', 'C', 'B', 'A', 'A']</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="用bisect-insort插入新元素"><a href="#用bisect-insort插入新元素" class="headerlink" title="用bisect.insort插入新元素"></a>用bisect.insort插入新元素</h4><p><code>insort</code>可以保持有序序列的顺序<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bisect</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">SIZE=<span class="number">7</span></span><br><span class="line"></span><br><span class="line">random.seed(<span class="number">1729</span>)</span><br><span class="line"></span><br><span class="line">my_list = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(SIZE):</span><br><span class="line">    new_item = random.randrange(SIZE*<span class="number">2</span>)</span><br><span class="line">    bisect.insort(my_list, new_item)</span><br><span class="line">    print(<span class="string">'%2d -&gt;'</span> % new_item, my_list)</span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">10 -&gt; [10]</span></span><br><span class="line"><span class="string"> 0 -&gt; [0, 10]</span></span><br><span class="line"><span class="string"> 6 -&gt; [0, 6, 10]</span></span><br><span class="line"><span class="string"> 8 -&gt; [0, 6, 8, 10]</span></span><br><span class="line"><span class="string"> 7 -&gt; [0, 6, 7, 8, 10]</span></span><br><span class="line"><span class="string"> 2 -&gt; [0, 2, 6, 7, 8, 10]</span></span><br><span class="line"><span class="string">10 -&gt; [0, 2, 6, 7, 8, 10, 10]</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="可以替换列表的数据结构"><a href="#可以替换列表的数据结构" class="headerlink" title="可以替换列表的数据结构"></a>可以替换列表的数据结构</h3><h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><p>如果我们需要一个只包含数字的列表，那么<code>array.array</code>比<code>list</code>更高效。数组支持所有跟可变序列有关的操作，包括<code>.pop</code>、<code>.insert</code>和<code>.extend</code>。另外，数组还提供从文件读取和存入文件的更快的方法，如<code>.frombytes</code>和<code>.tofile</code>。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> array <span class="keyword">import</span> array  <span class="comment"># 引入array对象</span></span><br><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">floats = array(<span class="string">'d'</span>, (random() <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>**<span class="number">7</span>)))  <span class="comment"># 利用可迭代对象建立双精度浮点数组</span></span><br><span class="line">print(floats[<span class="number">-1</span>])  <span class="comment"># 0.39453872600664874， 查看数组最后一个元素</span></span><br><span class="line"></span><br><span class="line">fp = open(<span class="string">'floats.bin'</span>, <span class="string">'wb'</span>)</span><br><span class="line">floats.tofile(fp)  <span class="comment"># 将数组写入文件</span></span><br><span class="line">fp.close()</span><br><span class="line"></span><br><span class="line">floats2 = array(<span class="string">'d'</span>)</span><br><span class="line">fp = open(<span class="string">'floats.bin'</span>, <span class="string">'rb'</span>)</span><br><span class="line">floats2.fromfile(fp, <span class="number">10</span>**<span class="number">7</span>)  <span class="comment"># 把1000万个浮点数从二进制文件中读取出来</span></span><br><span class="line">fp.close()</span><br><span class="line"></span><br><span class="line">print(floats2[<span class="number">-1</span>])  <span class="comment"># 0.39453872600664874， 查看最后一个元素</span></span><br><span class="line">print(floats == floats2)  <span class="comment"># True 检查两个数组的内容是否完全一样</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">小试验告诉我，用 array.fromfile 从一个二进制文件里读出 1000 万个双精度浮点数只需要 0.1 秒，</span></span><br><span class="line"><span class="string">这比从文本文件里读取的速度要快 60 倍，因为后者会使用内置的 float 方法把每一行文字转换成浮点数。</span></span><br><span class="line"><span class="string">另外，使用 array.tofile 写入到二进制文件，比以每行一个浮点数 的方式把所有数字写入到文本文件</span></span><br><span class="line"><span class="string">要快 7 倍。另外，1000 万个这样的 数在二进制文件里只占用 80 000 000 个字节（每个浮点数占用8</span></span><br><span class="line"><span class="string">个字 节，不需要任何额外空间），如果是文本文件的话，我们需要 181 515 739 个字节。</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure></p>
+<p>数组功能总结<br><img src="/2019/03/14/2-5列表排序-bisect模块-数组/15525711218040.jpg"><br><img src="/2019/03/14/2-5列表排序-bisect模块-数组/15525711389913.jpg"><br><img src="/2019/03/14/2-5列表排序-bisect模块-数组/15525711630577.jpg"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Fluent-Python/" rel="tag"># Fluent Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/13/2-4序列构成的数组04/" rel="next" title="Part2:2-4切片/+*/序列增量赋值">
+                <i class="fa fa-chevron-left"></i> Part2:2-4切片/+*/序列增量赋值
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/zzw.jpg" alt="David">
+            
+              <p class="site-author-name" itemprop="name">David</p>
+              <p class="site-description motion-element" itemprop="description">使我痛苦者，必使我强大！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Brave-man" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:y2356279292r@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#list-sort方法和内置函数sorted"><span class="nav-number">1.</span> <span class="nav-text">list.sort方法和内置函数sorted</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用bisect来管理已经排序的序列"><span class="nav-number">2.</span> <span class="nav-text">用bisect来管理已经排序的序列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用bisect来搜索"><span class="nav-number">2.1.</span> <span class="nav-text">用bisect来搜索</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用bisect-insort插入新元素"><span class="nav-number">2.2.</span> <span class="nav-text">用bisect.insort插入新元素</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可以替换列表的数据结构"><span class="nav-number">3.</span> <span class="nav-text">可以替换列表的数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数组"><span class="nav-number">3.1.</span> <span class="nav-text">数组</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">David</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
