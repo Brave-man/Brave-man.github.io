@@ -81,18 +81,22 @@
 
 
 
-<meta name="description" content="内置序列分类 按照是否可以存放多种类型分类  容器序列  ​    list、tuple、collections.deque这些序列可以存放不同的数据类型。  扁平序列  ​    str、bytes、bytearray、memoryview和array.array,这些序列只能容纳一种类型。  按照序列类型能否被修改分类  可变序列  list、bytearray、array.array、col">
+<meta name="description" content="双向队列deque123456789101112131415161718192021222324&amp;gt;&amp;gt;&amp;gt; from collections import deque&amp;gt;&amp;gt;&amp;gt; dq = deque(range(10), maxlen=10)&amp;gt;&amp;gt;&amp;gt; dqdeque([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], maxlen=10)&amp;g">
 <meta name="keywords" content="Fluent Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Part2:2-2 内置序列和列表推导式">
-<meta property="og:url" content="http://yoursite.com/2019/03/10/内置序列和列表推导式/index.html">
+<meta property="og:title" content="2-6双向队列deque">
+<meta property="og:url" content="http://yoursite.com/2019/03/18/2-6双向队列deque/index.html">
 <meta property="og:site_name" content="Brave-man&#39;s Blog">
-<meta property="og:description" content="内置序列分类 按照是否可以存放多种类型分类  容器序列  ​    list、tuple、collections.deque这些序列可以存放不同的数据类型。  扁平序列  ​    str、bytes、bytearray、memoryview和array.array,这些序列只能容纳一种类型。  按照序列类型能否被修改分类  可变序列  list、bytearray、array.array、col">
+<meta property="og:description" content="双向队列deque123456789101112131415161718192021222324&amp;gt;&amp;gt;&amp;gt; from collections import deque&amp;gt;&amp;gt;&amp;gt; dq = deque(range(10), maxlen=10)&amp;gt;&amp;gt;&amp;gt; dqdeque([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], maxlen=10)&amp;g">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-10T03:46:38.528Z">
+<meta property="og:image" content="http://yoursite.com/2019/03/18/2-6双向队列deque/15529144086291.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/18/2-6双向队列deque/15529144306018.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/18/2-6双向队列deque/15529144515747.jpg">
+<meta property="og:updated_time" content="2019-03-18T13:15:45.561Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Part2:2-2 内置序列和列表推导式">
-<meta name="twitter:description" content="内置序列分类 按照是否可以存放多种类型分类  容器序列  ​    list、tuple、collections.deque这些序列可以存放不同的数据类型。  扁平序列  ​    str、bytes、bytearray、memoryview和array.array,这些序列只能容纳一种类型。  按照序列类型能否被修改分类  可变序列  list、bytearray、array.array、col">
+<meta name="twitter:title" content="2-6双向队列deque">
+<meta name="twitter:description" content="双向队列deque123456789101112131415161718192021222324&amp;gt;&amp;gt;&amp;gt; from collections import deque&amp;gt;&amp;gt;&amp;gt; dq = deque(range(10), maxlen=10)&amp;gt;&amp;gt;&amp;gt; dqdeque([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], maxlen=10)&amp;g">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/18/2-6双向队列deque/15529144086291.jpg">
 
 
 
@@ -122,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/10/内置序列和列表推导式/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/18/2-6双向队列deque/">
 
 
 
 
 
-  <title>Part2:2-2 内置序列和列表推导式 | Brave-man's Blog</title>
+  <title>2-6双向队列deque | Brave-man's Blog</title>
   
 
 
@@ -275,7 +279,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/10/内置序列和列表推导式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/2-6双向队列deque/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="David">
@@ -292,7 +296,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Part2:2-2 内置序列和列表推导式</h1>
+          <h1 class="post-title" itemprop="name headline">2-6双向队列deque</h1>
         
 
         <div class="post-meta">
@@ -304,8 +308,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-10T11:38:56+08:00">
-                2019-03-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-18T21:09:52+08:00">
+                2019-03-18
               </time>
             
 
@@ -364,33 +368,10 @@
       
 
       
-        <h4 id="内置序列分类"><a href="#内置序列分类" class="headerlink" title="内置序列分类"></a>内置序列分类</h4><ul>
-<li><p>按照是否可以存放多种类型分类</p>
-<ul>
-<li>容器序列</li>
-</ul>
-<p>​    <code>list</code>、<code>tuple</code>、<code>collections.deque</code>这些序列可以存放不同的数据类型。</p>
-<ul>
-<li>扁平序列</li>
-</ul>
-<p>​    <code>str</code>、<code>bytes</code>、<code>bytearray</code>、<code>memoryview</code>和<code>array.array</code>,这些序列只能容纳一种类型。</p>
-</li>
-<li><p>按照序列类型能否被修改分类</p>
-<ul>
-<li><p>可变序列</p>
-<p> <code>list</code>、<code>bytearray</code>、<code>array.array</code>、<code>collections.deque</code>和<code>memory view</code>。</p>
-</li>
-<li><p>不可变序列</p>
-<p><code>tuple</code>、<code>str</code>、<code>bytes</code>。</p>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="列表推导式"><a href="#列表推导式" class="headerlink" title="列表推导式"></a>列表推导式</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ---------------列表推导式----------------</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">把一个字符串变成Unicode码位的列表</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="comment"># 方式一:常规写法</span></span><br><span class="line">symbols = <span class="string">'$&amp;@#^*'</span></span><br><span class="line">codes = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> symbol <span class="keyword">in</span> symbols:</span><br><span class="line">    codes.append(ord(symbol))</span><br><span class="line"></span><br><span class="line">print(codes)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 方式二:列表推导式</span></span><br><span class="line">codes = [ord(symbol) <span class="keyword">for</span> symbol <span class="keyword">in</span> symbols]</span><br><span class="line">print(codes)</span><br></pre></td></tr></table></figure>
-<p>在<code>python2.x</code>中，在列表推导中<code>for</code>关键字之后的赋值操作可能会影响列表推导上下文中的同名变量。下述例子中，<code>x</code>原来的值被取代了，在<code>python3</code>中不会出现这样的情况。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在python2.7中</span></span><br><span class="line">x = <span class="string">'my precious'</span></span><br><span class="line">dummy = [x <span class="keyword">for</span> x <span class="keyword">in</span> <span class="string">'ABC'</span>]</span><br><span class="line">print(x)  <span class="comment"># 'C'</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在python3中</span></span><br><span class="line">x = <span class="string">'ABC'</span></span><br><span class="line">dummy = [ord(x) <span class="keyword">for</span> x <span class="keyword">in</span> x]</span><br><span class="line">print(x)  <span class="comment"># 'ABC'</span></span><br><span class="line">print(dummy) <span class="comment"># [65, 66, 67]</span></span><br></pre></td></tr></table></figure>
-<p>列表推导式、生成器表达式以及集合推导式和字典推导式，在python3中有个自己的局部作用域，就像函数似的。表达式内部的变量和赋值只在局部起作用，表达式的上下文里的同名变量还可以被正常引用，局部变量并不会影响到它们。</p>
+        <h3 id="双向队列deque"><a href="#双向队列deque" class="headerlink" title="双向队列deque"></a>双向队列<code>deque</code></h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq = deque(range(<span class="number">10</span>), maxlen=<span class="number">10</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq</span><br><span class="line">deque([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>], maxlen=<span class="number">10</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq.rotate(<span class="number">3</span>)</span><br><span class="line"><span class="comment"># rotate()接受一个参数，当n&gt;0将最右边的n个数移到最左边</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq</span><br><span class="line">deque([<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], maxlen=<span class="number">10</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq.rotate(<span class="number">-4</span>)</span><br><span class="line"><span class="comment"># 当n&lt;0时，将最左边的n个参数移动到最右边</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq</span><br><span class="line">deque([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">0</span>], maxlen=<span class="number">10</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq.appendleft(<span class="number">-1</span>)</span><br><span class="line"><span class="comment"># 最左边添加一个数</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq</span><br><span class="line">deque([<span class="number">-1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>], maxlen=<span class="number">10</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq.extend([<span class="number">11</span>, <span class="number">22</span>, <span class="number">33</span>])</span><br><span class="line"><span class="comment"># 最右边迭代着添加</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq</span><br><span class="line">deque([<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">11</span>, <span class="number">22</span>, <span class="number">33</span>], maxlen=<span class="number">10</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq.extendleft([<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>])</span><br><span class="line"><span class="comment"># 最左边迭代着添加</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq</span><br><span class="line">deque([<span class="number">40</span>, <span class="number">30</span>, <span class="number">20</span>, <span class="number">10</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>], maxlen=<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="列表和队列的方法比较"><a href="#列表和队列的方法比较" class="headerlink" title="列表和队列的方法比较"></a>列表和队列的方法比较</h4><img src="/2019/03/18/2-6双向队列deque/15529144086291.jpg">
+<img src="/2019/03/18/2-6双向队列deque/15529144306018.jpg">
+<img src="/2019/03/18/2-6双向队列deque/15529144515747.jpg">
 
       
     </div>
@@ -421,8 +402,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/10/2-1 列表推导式和生成器推导式/" rel="next" title="Part2:2-1 列表推导式和生成器推导式">
-                <i class="fa fa-chevron-left"></i> Part2:2-1 列表推导式和生成器推导式
+              <a href="/2019/03/14/2-5列表排序-bisect模块-数组/" rel="next" title="Part2:2-5列表排序/bisect模块/数组">
+                <i class="fa fa-chevron-left"></i> Part2:2-5列表排序/bisect模块/数组
               </a>
             
           </div>
@@ -430,10 +411,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/11/2-3元组/" rel="prev" title="Part2:2-3 元组">
-                Part2:2-3 元组 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -590,7 +567,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#内置序列分类"><span class="nav-number">1.</span> <span class="nav-text">内置序列分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#列表推导式"><span class="nav-number">2.</span> <span class="nav-text">列表推导式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#双向队列deque"><span class="nav-number">1.</span> <span class="nav-text">双向队列deque</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#列表和队列的方法比较"><span class="nav-number">1.1.</span> <span class="nav-text">列表和队列的方法比较</span></a></li></ol></li></ol></div>
             
 
           </div>
