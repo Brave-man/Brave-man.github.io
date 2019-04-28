@@ -2,6 +2,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
@@ -9,7 +18,7 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 
 
@@ -20,12 +29,6 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
 
 
 
@@ -40,7 +43,66 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Menlo:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
 
 
 
@@ -48,40 +110,37 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT">
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="Brave-man's Blog" type="application/atom+xml">
-
+  
 
 
 
 
-
-<meta name="description" content="使我痛苦者，必使我强大！">
+  <meta name="description" content="使我痛苦者，必使我强大！">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Brave-man&#39;s Blog">
 <meta property="og:url" content="http://yoursite.com/index.html">
@@ -94,37 +153,21 @@
 
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
+  <link rel="alternate" href="/atom.xml" title="Brave-man's Blog" type="application/atom+xml">
 
 
 
+  
+  
   <link rel="canonical" href="http://yoursite.com/">
 
 
 
-
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
   <title>Brave-man's Blog</title>
   
@@ -135,6 +178,35 @@
 
 
 
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
@@ -151,7 +223,7 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
@@ -161,13 +233,12 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="Toggle navigation bar">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -175,75 +246,120 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
-            
-            关于
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
+          
+          <li class="menu-item menu-item-home menu-item-active">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
-            
-            公益404
-          </a>
-        </li>
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-commonweal">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/404.html" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>Commonweal 404</a>
+
+  </li>
 
       
+      
     </ul>
+  
+
   
 
   
@@ -251,12 +367,23 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+            
+
+          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
@@ -269,6 +396,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -278,7 +407,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="David">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="使我痛苦者，必使我强大！">
       <meta itemprop="image" content="/images/zzw.jpg">
     </span>
 
@@ -293,25 +422,39 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/28/chapter04-序列类型/" itemprop="url">Chapter04-序列类型</a></h1>
+                
+                <a href="/2019/04/28/chapter04-序列类型/" class="post-title-link" itemprop="url">Chapter04-序列类型</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-28T23:07:22+08:00">
-                2019-04-28
-              </time>
+
+              
+                
+              
+
+              <time title="Created: 2019-04-28 23:07:22 / Modified: 23:08:25" itemprop="dateCreated datePublished" datetime="2019-04-28T23:07:22+08:00">2019-04-28</time>
             
 
             
+              
 
+              
             
           </span>
 
@@ -324,14 +467,10 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python3-Advanced-Programme/" itemprop="url" rel="index">
-                    <span itemprop="name">Python3 Advanced Programme</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python3-Advanced-Programme/" itemprop="url" rel="index"><span itemprop="name">Python3 Advanced Programme</span></a></span>
 
                 
                 
@@ -340,6 +479,7 @@
           
 
           
+            
             
           
 
@@ -386,21 +526,29 @@
 <li>不可变序列:不可以增删改<ul>
 <li><code>str</code> <code>tuple</code> <code>bytes</code>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/28/chapter04-序列类型/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/04/28/chapter04-序列类型/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </li></ul></li></ul></div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -433,6 +581,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -442,7 +592,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="David">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="使我痛苦者，必使我强大！">
       <meta itemprop="image" content="/images/zzw.jpg">
     </span>
 
@@ -457,25 +607,39 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/07/深入理解类和对象2/" itemprop="url">Chapter03-深入类和对象02</a></h1>
+                
+                <a href="/2019/04/07/深入理解类和对象2/" class="post-title-link" itemprop="url">Chapter03-深入类和对象02</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-07T21:59:26+08:00">
-                2019-04-07
-              </time>
+
+              
+                
+              
+
+              <time title="Created: 2019-04-07 21:59:26 / Modified: 22:00:59" itemprop="dateCreated datePublished" datetime="2019-04-07T21:59:26+08:00">2019-04-07</time>
             
 
             
+              
 
+              
             
           </span>
 
@@ -488,14 +652,10 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python3-Advanced-Programme/" itemprop="url" rel="index">
-                    <span itemprop="name">Python3 Advanced Programme</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python3-Advanced-Programme/" itemprop="url" rel="index"><span itemprop="name">Python3 Advanced Programme</span></a></span>
 
                 
                 
@@ -504,6 +664,7 @@
           
 
           
+            
             
           
 
@@ -532,21 +693,29 @@
         
           <h3 id="3-7-数据封装和私有属性"><a href="#3-7-数据封装和私有属性" class="headerlink" title="3-7 数据封装和私有属性"></a>3-7 数据封装和私有属性</h3><p>私有属性：<br>    在属性前加上双下划线<code>__</code>, <code>python</code>内部会对该属性名称进行转换，转换为:<code>_类名__私有属性名</code>。使得外部对象不能直接调用<code>__私有属性</code>，实质上并没有做到数据安全。<br>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/07/深入理解类和对象2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/04/07/深入理解类和对象2/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </p></div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -579,6 +748,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -588,7 +759,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="David">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="使我痛苦者，必使我强大！">
       <meta itemprop="image" content="/images/zzw.jpg">
     </span>
 
@@ -603,25 +774,39 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/05/深入类和对象1/" itemprop="url">Chapter03-深入类和对象01</a></h1>
+                
+                <a href="/2019/04/05/深入类和对象1/" class="post-title-link" itemprop="url">Chapter03-深入类和对象01</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-05T21:21:59+08:00">
-                2019-04-05
-              </time>
+
+              
+                
+              
+
+              <time title="Created: 2019-04-05 21:21:59 / Modified: 21:24:18" itemprop="dateCreated datePublished" datetime="2019-04-05T21:21:59+08:00">2019-04-05</time>
             
 
             
+              
 
+              
             
           </span>
 
@@ -634,14 +819,10 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python3-Advanced-Programme/" itemprop="url" rel="index">
-                    <span itemprop="name">Python3 Advanced Programme</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python3-Advanced-Programme/" itemprop="url" rel="index"><span itemprop="name">Python3 Advanced Programme</span></a></span>
 
                 
                 
@@ -650,6 +831,7 @@
           
 
           
+            
             
           
 
@@ -678,21 +860,29 @@
         
           <h3 id="3-1-鸭子类型和多态"><a href="#3-1-鸭子类型和多态" class="headerlink" title="3-1 鸭子类型和多态"></a>3-1 鸭子类型和多态</h3><p><strong>鸭子类型</strong><br>    当你看见一只鸟走起来像鸭子，游泳起来像鸭子，叫起来像鸭子，那么这只鸟就可以被称为鸭子。<br>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/05/深入类和对象1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/04/05/深入类和对象1/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </p></div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -725,6 +915,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -734,7 +926,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="David">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="使我痛苦者，必使我强大！">
       <meta itemprop="image" content="/images/zzw.jpg">
     </span>
 
@@ -749,25 +941,39 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/30/魔法函数/" itemprop="url">Chapter02魔法函数</a></h1>
+                
+                <a href="/2019/03/30/魔法函数/" class="post-title-link" itemprop="url">Chapter02魔法函数</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-30T17:44:57+08:00">
-                2019-03-30
-              </time>
+
+              
+                
+              
+
+              <time title="Created: 2019-03-30 17:44:57 / Modified: 17:50:27" itemprop="dateCreated datePublished" datetime="2019-03-30T17:44:57+08:00">2019-03-30</time>
             
 
             
+              
 
+              
             
           </span>
 
@@ -780,14 +986,10 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python3-Advanced-Programme/" itemprop="url" rel="index">
-                    <span itemprop="name">Python3 Advanced Programme</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python3-Advanced-Programme/" itemprop="url" rel="index"><span itemprop="name">Python3 Advanced Programme</span></a></span>
 
                 
                 
@@ -796,6 +998,7 @@
           
 
           
+            
             
           
 
@@ -824,21 +1027,29 @@
         
           <h3 id="2-1-什么是魔法函数"><a href="#2-1-什么是魔法函数" class="headerlink" title="2-1 什么是魔法函数"></a>2-1 什么是魔法函数</h3><p>魔法函数，即对<code>python</code>中以<code>__</code>开头的函数的一种叫法，如<code>__init__</code>、<code>__repr__</code>等。<br><strong>demo</strong><br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Company</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, employee_list)</span>:</span></span><br><span class="line">        self.employee_list = employee_list</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self, item)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.employee_list[item]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">company = Company([<span class="string">'tom'</span>, <span class="string">'jan'</span>, <span class="string">'jack'</span>])</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> em <span class="keyword">in</span> company:</span><br><span class="line">    print(em)</span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">for循环的对象是一个可迭代对象，</span></span><br><span class="line"><span class="string">在类中若没有定义__iter__, 那么会去找__getitem__,通过它来取值，直到取到值或者抛异常，才会结束for循环</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/30/魔法函数/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/03/30/魔法函数/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -871,6 +1082,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -880,7 +1093,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="David">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="使我痛苦者，必使我强大！">
       <meta itemprop="image" content="/images/zzw.jpg">
     </span>
 
@@ -895,25 +1108,51 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/25/chapter01python中一切皆对象01/" itemprop="url">Chapter01python中一切皆对象01</a></h1>
+                
+                <a href="/2019/03/25/chapter01python中一切皆对象01/" class="post-title-link" itemprop="url">Chapter01python中一切皆对象01</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-25T22:55:58+08:00">
-                2019-03-25
-              </time>
+
+              
+                
+              
+
+              <time title="Created: 2019-03-25 22:55:58" itemprop="dateCreated datePublished" datetime="2019-03-25T22:55:58+08:00">2019-03-25</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-03-29 22:16:07" itemprop="dateModified" datetime="2019-03-29T22:16:07+08:00">2019-03-29</time>
+              
             
           </span>
 
@@ -926,14 +1165,10 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python3-Advanced-Programme/" itemprop="url" rel="index">
-                    <span itemprop="name">Python3 Advanced Programme</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python3-Advanced-Programme/" itemprop="url" rel="index"><span itemprop="name">Python3 Advanced Programme</span></a></span>
 
                 
                 
@@ -942,6 +1177,7 @@
           
 
           
+            
             
           
 
@@ -976,21 +1212,29 @@
 <li>可以当作函数的返回值</li>
 </ul>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/25/chapter01python中一切皆对象01/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/03/25/chapter01python中一切皆对象01/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1023,6 +1267,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1032,7 +1278,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="David">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="使我痛苦者，必使我强大！">
       <meta itemprop="image" content="/images/zzw.jpg">
     </span>
 
@@ -1047,25 +1293,39 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/24/python并行编程-线程1/" itemprop="url">Python并行编程:线程1</a></h1>
+                
+                <a href="/2019/03/24/python并行编程-线程1/" class="post-title-link" itemprop="url">Python并行编程:线程1</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-24T21:46:35+08:00">
-                2019-03-24
-              </time>
+
+              
+                
+              
+
+              <time title="Created: 2019-03-24 21:46:35 / Modified: 21:52:49" itemprop="dateCreated datePublished" datetime="2019-03-24T21:46:35+08:00">2019-03-24</time>
             
 
             
+              
 
+              
             
           </span>
 
@@ -1078,14 +1338,10 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python-Concurrent-Programming/" itemprop="url" rel="index">
-                    <span itemprop="name">Python Concurrent Programming</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python-Concurrent-Programming/" itemprop="url" rel="index"><span itemprop="name">Python Concurrent Programming</span></a></span>
 
                 
                 
@@ -1094,6 +1350,7 @@
           
 
           
+            
             
           
 
@@ -1122,21 +1379,29 @@
         
           <h1 id="线程的使用"><a href="#线程的使用" class="headerlink" title="线程的使用"></a>线程的使用</h1><p>线程是一个独立的执行流，系统中的多个线程可以并行及并发执行。多个线程可以共享数据与资源，利用了所谓的共享信息空间。线程与进程的具体实现取决于应用所运行的操作系统，不过一般来说，线程位于进程内，同一进程中的不同线程共享一些资源。与之相反，不同的进程则不会共享它们的资源。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/24/python并行编程-线程1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/03/24/python并行编程-线程1/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1169,6 +1434,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1178,7 +1445,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="David">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="使我痛苦者，必使我强大！">
       <meta itemprop="image" content="/images/zzw.jpg">
     </span>
 
@@ -1193,25 +1460,39 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/18/asyncio/" itemprop="url">Asyncio</a></h1>
+                
+                <a href="/2019/03/18/asyncio/" class="post-title-link" itemprop="url">Asyncio</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-18T22:28:52+08:00">
-                2019-03-18
-              </time>
+
+              
+                
+              
+
+              <time title="Created: 2019-03-18 22:28:52 / Modified: 22:35:50" itemprop="dateCreated datePublished" datetime="2019-03-18T22:28:52+08:00">2019-03-18</time>
             
 
             
+              
 
+              
             
           </span>
 
@@ -1224,14 +1505,10 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python-Concurrent-Programming/" itemprop="url" rel="index">
-                    <span itemprop="name">Python Concurrent Programming</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python-Concurrent-Programming/" itemprop="url" rel="index"><span itemprop="name">Python Concurrent Programming</span></a></span>
 
                 
                 
@@ -1240,6 +1517,7 @@
           
 
           
+            
             
           
 
@@ -1269,21 +1547,29 @@
           <h1 id="asyncio"><a href="#asyncio" class="headerlink" title="asyncio"></a>asyncio</h1><p><strong>python版本3.7+</strong> </p>
 <h3 id="简单调用一个协程"><a href="#简单调用一个协程" class="headerlink" title="简单调用一个协程"></a>简单调用一个协程</h3><p><strong>demo1</strong><br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> asyncio</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'hello'</span>)</span><br><span class="line">    <span class="keyword">await</span> asyncio.sleep(<span class="number">2</span>)</span><br><span class="line">    print(<span class="string">'world'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">asyncio.run(main())</span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/18/asyncio/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/03/18/asyncio/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1316,6 +1602,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1325,7 +1613,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="David">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="使我痛苦者，必使我强大！">
       <meta itemprop="image" content="/images/zzw.jpg">
     </span>
 
@@ -1340,25 +1628,39 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/18/2-6双向队列deque/" itemprop="url">Part2:2-6双向队列deque</a></h1>
+                
+                <a href="/2019/03/18/2-6双向队列deque/" class="post-title-link" itemprop="url">Part2:2-6双向队列deque</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-18T21:09:52+08:00">
-                2019-03-18
-              </time>
+
+              
+                
+              
+
+              <time title="Created: 2019-03-18 21:09:52 / Modified: 21:36:27" itemprop="dateCreated datePublished" datetime="2019-03-18T21:09:52+08:00">2019-03-18</time>
             
 
             
+              
 
+              
             
           </span>
 
@@ -1371,14 +1673,10 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Fluent-Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Fluent Python</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Fluent-Python/" itemprop="url" rel="index"><span itemprop="name">Fluent Python</span></a></span>
 
                 
                 
@@ -1387,6 +1685,7 @@
           
 
           
+            
             
           
 
@@ -1415,21 +1714,29 @@
         
           <h3 id="双向队列deque"><a href="#双向队列deque" class="headerlink" title="双向队列deque"></a>双向队列<code>deque</code></h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq = deque(range(<span class="number">10</span>), maxlen=<span class="number">10</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq</span><br><span class="line">deque([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>], maxlen=<span class="number">10</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq.rotate(<span class="number">3</span>)</span><br><span class="line"><span class="comment"># rotate()接受一个参数，当n&gt;0将最右边的n个数移到最左边</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq</span><br><span class="line">deque([<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], maxlen=<span class="number">10</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq.rotate(<span class="number">-4</span>)</span><br><span class="line"><span class="comment"># 当n&lt;0时，将最左边的n个参数移动到最右边</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq</span><br><span class="line">deque([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">0</span>], maxlen=<span class="number">10</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq.appendleft(<span class="number">-1</span>)</span><br><span class="line"><span class="comment"># 最左边添加一个数</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq</span><br><span class="line">deque([<span class="number">-1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>], maxlen=<span class="number">10</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq.extend([<span class="number">11</span>, <span class="number">22</span>, <span class="number">33</span>])</span><br><span class="line"><span class="comment"># 最右边迭代着添加</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq</span><br><span class="line">deque([<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">11</span>, <span class="number">22</span>, <span class="number">33</span>], maxlen=<span class="number">10</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq.extendleft([<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>])</span><br><span class="line"><span class="comment"># 最左边迭代着添加</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq</span><br><span class="line">deque([<span class="number">40</span>, <span class="number">30</span>, <span class="number">20</span>, <span class="number">10</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>], maxlen=<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/18/2-6双向队列deque/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/03/18/2-6双向队列deque/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1460,6 +1767,8 @@
 
   
   
+  
+
   
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -1471,7 +1780,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="David">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="使我痛苦者，必使我强大！">
       <meta itemprop="image" content="/images/zzw.jpg">
     </span>
 
@@ -1486,25 +1795,39 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/14/2-5列表排序-bisect模块-数组/" itemprop="url">Part2:2-5列表排序/bisect模块/数组</a></h1>
+                
+                <a href="/2019/03/14/2-5列表排序-bisect模块-数组/" class="post-title-link" itemprop="url">Part2:2-5列表排序/bisect模块/数组</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-14T21:49:38+08:00">
-                2019-03-14
-              </time>
+
+              
+                
+              
+
+              <time title="Created: 2019-03-14 21:49:38 / Modified: 21:57:15" itemprop="dateCreated datePublished" datetime="2019-03-14T21:49:38+08:00">2019-03-14</time>
             
 
             
+              
 
+              
             
           </span>
 
@@ -1517,14 +1840,10 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Fluent-Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Fluent Python</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Fluent-Python/" itemprop="url" rel="index"><span itemprop="name">Fluent Python</span></a></span>
 
                 
                 
@@ -1533,6 +1852,7 @@
           
 
           
+            
             
           
 
@@ -1560,26 +1880,36 @@
       
         
           
-          list.sort方法和内置函数sortedlist.sort方法会就地排序，不会把原列表复制一份，返回值为None。sorted则相反，会新建一个列表作为返回值，接受任何形式的的可迭代对象作为参数，甚至包括不可变序列和生成器。二者都有两个可选的关键字参数：
+            <p>
+              list.sort方法和内置函数sortedlist.sort方法会就地排序，不会把原列表复制一份，返回值为None。sorted则相反，会新建一个列表作为返回值，接受任何形式的的可迭代对象作为参数，甚至包括不可变序列和生成器。二者都有两个可选的关键字参数：
 
 reverse,为True,倒序。默认
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/14/2-5列表排序-bisect模块-数组/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/03/14/2-5列表排序-bisect模块-数组/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1612,6 +1942,8 @@ reverse,为True,倒序。默认
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1621,7 +1953,7 @@ reverse,为True,倒序。默认
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="David">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="使我痛苦者，必使我强大！">
       <meta itemprop="image" content="/images/zzw.jpg">
     </span>
 
@@ -1636,25 +1968,39 @@ reverse,为True,倒序。默认
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/13/2-4序列构成的数组04/" itemprop="url">Part2:2-4切片/+*/序列增量赋值</a></h1>
+                
+                <a href="/2019/03/13/2-4序列构成的数组04/" class="post-title-link" itemprop="url">Part2:2-4切片/+*/序列增量赋值</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-13T21:49:51+08:00">
-                2019-03-13
-              </time>
+
+              
+                
+              
+
+              <time title="Created: 2019-03-13 21:49:51 / Modified: 23:27:34" itemprop="dateCreated datePublished" datetime="2019-03-13T21:49:51+08:00">2019-03-13</time>
             
 
             
+              
 
+              
             
           </span>
 
@@ -1667,14 +2013,10 @@ reverse,为True,倒序。默认
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Fluent-Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Fluent Python</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Fluent-Python/" itemprop="url" rel="index"><span itemprop="name">Fluent Python</span></a></span>
 
                 
                 
@@ -1683,6 +2025,7 @@ reverse,为True,倒序。默认
           
 
           
+            
             
           
 
@@ -1710,26 +2053,36 @@ reverse,为True,倒序。默认
       
         
           
-          切片为什么切片和区间会忽略最后一个元素在切片和区间操作不包含区间范围的最后一个元素是Python的风格，这个习惯符合Python、C和其他语言里以0作为起始下标的传统。这样做带来的好处如下：
+            <p>
+              切片为什么切片和区间会忽略最后一个元素在切片和区间操作不包含区间范围的最后一个元素是Python的风格，这个习惯符合Python、C和其他语言里以0作为起始下标的传统。这样做带来的好处如下：
 
 当只有最后一个位置信息时，我们也可以快速看出切片和区间里有几个元素：range(3)和my_list[:3
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/13/2-4序列构成的数组04/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/03/13/2-4序列构成的数组04/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1758,15 +2111,12 @@ reverse,为True,倒序。默认
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
 
           </div>
-          
-
-
           
 
         </div>
@@ -1782,59 +2132,86 @@ reverse,为True,倒序。默认
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
     <div class="sidebar-inner">
 
       
 
       
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="/images/zzw.jpg" alt="David">
             
               <p class="site-author-name" itemprop="name">David</p>
-              <p class="site-description motion-element" itemprop="description">使我痛苦者，必使我强大！</p>
+              <div class="site-description motion-element" itemprop="description">使我痛苦者，必使我强大！</div>
           </div>
 
-          <nav class="site-state motion-element">
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
 
-            
-              <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
               
-                  <span class="site-state-item-count">16</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
 
-            
               
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
               
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
+            </nav>
+          
 
           
             <div class="feed-link motion-element">
@@ -1846,33 +2223,47 @@ reverse,为True,倒序。默认
           
 
           
+
+          
             <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/Brave-man" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="mailto:y2356279292r@gmail.com" target="_blank" title="E-Mail">
-                      
-                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                  </span>
-                
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/Brave-man" title="GitHub &rarr; https://github.com/Brave-man" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:y2356279292r@gmail.com" title="E-Mail &rarr; mailto:y2356279292r@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
             </div>
           
 
           
-          
 
           
           
 
+          
+            
+          
           
 
         </div>
-      </section>
+      </div>
 
       
 
@@ -1880,6 +2271,7 @@ reverse,为True,倒序。默认
 
     </div>
   </aside>
+  
 
 
         
@@ -1889,16 +2281,18 @@ reverse,为True,倒序。默认
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">David</span>
 
   
+
+  
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
 
 
 
@@ -1906,12 +2300,13 @@ reverse,为True,倒序。默认
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.0</div>
 
 
 
 
         
+
 
 
 
@@ -1932,11 +2327,14 @@ reverse,为True,倒序。默认
 
     
 
+    
+
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -1950,106 +2348,19 @@ reverse,为True,倒序。默认
 
 
 
-  
-
-
-  
-
-
-
-
-
-
 
 
 
 
 
   
+    
+    
+      
+    
   
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest.min.js"></script>
 
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
 
 
 
@@ -2063,7 +2374,54 @@ reverse,为True,倒序。默认
 
 
   
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.0"></script>
+
+
+
+
+  
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
 
 
 
@@ -2075,6 +2433,19 @@ reverse,为True,倒序。默认
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
