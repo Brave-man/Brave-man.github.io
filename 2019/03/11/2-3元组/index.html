@@ -383,11 +383,13 @@
 
   
   
+    
+  
   
 
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal true" itemscope itemtype="http://schema.org/Article">
   
   
   
@@ -473,6 +475,13 @@
           
           
 
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
           
 
           
@@ -760,7 +769,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#用生成器表达式计算笛卡尔积"><span class="nav-number">1.</span> <span class="nav-text">用生成器表达式计算笛卡尔积</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#元组和记录"><span class="nav-number">2.</span> <span class="nav-text">元组和记录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#元组拆包"><span class="nav-number">3.</span> <span class="nav-text">元组拆包</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#平行赋值"><span class="nav-number">3.1.</span> <span class="nav-text">平行赋值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用-来处理剩下的元素"><span class="nav-number">3.2.</span> <span class="nav-text">用*来处理剩下的元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#嵌套元组拆包"><span class="nav-number">3.3.</span> <span class="nav-text">嵌套元组拆包</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#具名元组"><span class="nav-number">4.</span> <span class="nav-text">具名元组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作为不可变列表的元组"><span class="nav-number">5.</span> <span class="nav-text">作为不可变列表的元组</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#用生成器表达式计算笛卡尔积"><span class="nav-text">用生成器表达式计算笛卡尔积</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#元组和记录"><span class="nav-text">元组和记录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#元组拆包"><span class="nav-text">元组拆包</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#平行赋值"><span class="nav-text">平行赋值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用-来处理剩下的元素"><span class="nav-text">用*来处理剩下的元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#嵌套元组拆包"><span class="nav-text">嵌套元组拆包</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#具名元组"><span class="nav-text">具名元组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作为不可变列表的元组"><span class="nav-text">作为不可变列表的元组</span></a></li></ol></div>
             
 
           </div>
@@ -781,10 +790,9 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-user" style="color: white"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">David</span>
 
@@ -801,12 +809,34 @@
 
 
 
-<div class="powered-by">
-<i class="fa fa-user-md"></i>本站访客数:
-<span id="busuanzi_value_site_uv" style="display: inline"></span>
-</div>
 
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
 
 
 
@@ -1291,5 +1321,5 @@
    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
    <script type="text/javascript" src="/js/src/fireworks.js"></script>
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":250,"height":400},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":250,"height":400},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
 </html>
