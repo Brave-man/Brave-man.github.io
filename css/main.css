@@ -1851,7 +1851,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #7040a8;
+  background: #6234bb;
 }
 .feed-link,
 .chat {
@@ -3057,8 +3057,4 @@ body {
 }
 body #footer > div > div {
   color: #fff;
-}
-@font-face {
-  font-family: Iosevka;
-  src: url("/fonts/iosevka-regular.ttf");
 }
