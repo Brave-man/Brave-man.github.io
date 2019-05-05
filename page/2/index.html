@@ -397,6 +397,205 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/2-6双向队列deque/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="David">
+      <meta itemprop="description" content="使我痛苦者，必使我强大！">
+      <meta itemprop="image" content="/images/zzw.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Brave-man's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/03/18/2-6双向队列deque/" class="post-title-link" itemprop="url">Part2:2-6双向队列deque</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-18 21:09:52 / 修改时间：21:36:27" itemprop="dateCreated datePublished" datetime="2019-03-18T21:09:52+08:00">2019-03-18</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Fluent-Python/" itemprop="url" rel="index"><span itemprop="name">Fluent Python</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">790</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="双向队列deque"><a href="#双向队列deque" class="headerlink" title="双向队列deque"></a>双向队列<code>deque</code></h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq = deque(range(<span class="number">10</span>), maxlen=<span class="number">10</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq</span><br><span class="line">deque([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>], maxlen=<span class="number">10</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq.rotate(<span class="number">3</span>)</span><br><span class="line"><span class="comment"># rotate()接受一个参数，当n&gt;0将最右边的n个数移到最左边</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq</span><br><span class="line">deque([<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], maxlen=<span class="number">10</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq.rotate(<span class="number">-4</span>)</span><br><span class="line"><span class="comment"># 当n&lt;0时，将最左边的n个参数移动到最右边</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq</span><br><span class="line">deque([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">0</span>], maxlen=<span class="number">10</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq.appendleft(<span class="number">-1</span>)</span><br><span class="line"><span class="comment"># 最左边添加一个数</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq</span><br><span class="line">deque([<span class="number">-1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>], maxlen=<span class="number">10</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq.extend([<span class="number">11</span>, <span class="number">22</span>, <span class="number">33</span>])</span><br><span class="line"><span class="comment"># 最右边迭代着添加</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq</span><br><span class="line">deque([<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">11</span>, <span class="number">22</span>, <span class="number">33</span>], maxlen=<span class="number">10</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq.extendleft([<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>])</span><br><span class="line"><span class="comment"># 最左边迭代着添加</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dq</span><br><span class="line">deque([<span class="number">40</span>, <span class="number">30</span>, <span class="number">20</span>, <span class="number">10</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>], maxlen=<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/03/18/2-6双向队列deque/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/14/2-5列表排序-bisect模块-数组/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2061,7 +2260,7 @@ reverse,为True,倒序。默认
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2207,7 +2406,7 @@ reverse,为True,倒序。默认
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">62k</span>
+    <span title="站点总字数">67k</span>
   
 
   
@@ -2218,7 +2417,7 @@ reverse,为True,倒序。默认
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">1:43</span>
+    <span title="站点阅读时长">1:52</span>
   
 </div>
 
